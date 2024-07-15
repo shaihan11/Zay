@@ -1,0 +1,76 @@
+<section>
+    <div class="base-container">
+        <header class="header-nav">
+            <div class="header-logo">
+                <a href="/">
+                    {% if section.settings.logo_image != blank %}
+                        <img
+                            width="40"
+                            height="40"
+                            loading="lazy"
+                            src="{{ section.settings.logo_image | image_url }}" 
+                            alt="logo top"/>
+                    {% else %}
+                        <img 
+                            width="80"
+                            height="50"
+                            loading="lazy"
+                            src="{{ 'nike-logo.png' | asset_url }}" 
+                            alt="nike-logo"/>
+                    {% endif %}
+                </a>
+            </div>
+
+            {% render 'header-nav' %}
+        
+            <div class="header-right">
+                <form action="/search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input class="search-nav" placeholder="search" type="search">
+                </form>
+
+                <div class="wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+
+                <div class="wishlist">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+
+            </div>
+        </header>
+        
+        
+        <style>
+            .nav-menu ul li a {
+                color: {{ section.settings.text_color }};
+            }
+        </style>
+        
+        
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Navbar",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo_image",
+            "label": "Pick image",
+            "info": "Png file"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#000000"
+        },
+        
+    ],
+    "presets": []
+}
+{% endschema %}
+
+
