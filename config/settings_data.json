@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "sections": {
@@ -6,12 +15,15 @@
         "settings": {
           "show-announcement": true,
           "background": "#212934",
-          "text_color": "#ffffff"
+          "text_color": "#ffffff",
+          "header_email": "info@company.com",
+          "header_phone": "010-020-0340"
         }
       },
       "header": {
         "type": "header",
         "settings": {
+          "text_color": "#d42222"
         }
       },
       "footer": {
