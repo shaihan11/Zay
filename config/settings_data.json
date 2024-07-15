@@ -23,7 +23,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "text_color": "#d42222"
+          "text_color": "#000000"
         }
       },
       "footer": {
