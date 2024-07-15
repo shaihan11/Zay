@@ -2,11 +2,11 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+            {% comment %} <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
                 Zay
-            </a>
+            </a> {% endcomment %}
 
-            <a href="/">
+            <a href="/" class="navbar-brand text-success logo h1 align-self-center">
                 {% if section.settings.logo_image != blank %}
                     <img
                         width="40"
@@ -19,7 +19,7 @@
                         width="80"
                         height="50"
                         loading="lazy"
-                        src="{{ 'nike-logo.png' | asset_url }}" 
+                        src="{{ 'zay.png' | asset_url }}" 
                         alt="nike-logo"/>
                 {% endif %}
             </a>
@@ -71,3 +71,38 @@
         </div>
     </nav>
 </header>
+
+
+
+
+<style>
+    #templatemo_main_nav a{
+        Color:{{  section.settings.text_color }}
+
+    }
+
+</style>
+
+
+
+{% schema %}
+{
+    "name": "Navbar",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo_image",
+            "label": "Pick Logo",
+            "info": "Png file"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Menu Color",
+            "default": "#000000"
+        },
+        
+    ],
+    "presets": []
+}
+{% endschema %}
