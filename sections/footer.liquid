@@ -1,5 +1,7 @@
 <footer class="bg-dark" id="tempaltemo_footer">
     <div class="container">
+
+        {% comment %} footer top {% endcomment %}
         <div class="row">
 
             <div class="col-md-4 pt-5">
@@ -7,45 +9,52 @@
                 <ul class="list-unstyled text-light footer-link-list">
                     <li>
                         <i class="fas fa-map-marker-alt fa-fw"></i>
-                        123 Consectetur at ligula 10660
+                        {{section.settings.header_address}}
                     </li>
                     <li>
                         <i class="fa fa-phone fa-fw"></i>
-                        <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                        <a class="text-decoration-none" href="tel:{{section.settings.header_phone}}">{{section.settings.header_phone}}</a>
                     </li>
                     <li>
                         <i class="fa fa-envelope fa-fw"></i>
-                        <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                        <a class="text-decoration-none" href="mailto:{{section.settings.header_email}}">{{section.settings.header_email}}</a>
                     </li>
                 </ul>
             </div>
 
             <div class="col-md-4 pt-5">
                 <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
-                <ul class="list-unstyled text-light footer-link-list">
-                    <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                    <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                    <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                    <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                    <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                    <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                    <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
-                </ul>
+
+
+              <ul class="list-unstyled text-light footer-link-list">
+                    {% for block in section.blocks %}
+                        {% case block.type %}
+                            {% when 'quicklinks' %}
+                                <li>
+                                    <a class="text-decoration-none" href="{{ block.settings.link_url }}" target="_blank">
+                                        {{ block.settings.link_text | escape }}
+                                    </a>
+                                </li>
+                        {% endcase %}
+                    {% endfor %}
+                </ul> 
+                
+
+
+
             </div>
 
             <div class="col-md-4 pt-5">
                 <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
-                <ul class="list-unstyled text-light footer-link-list">
-                    <li><a class="text-decoration-none" href="#">Home</a></li>
-                    <li><a class="text-decoration-none" href="#">About Us</a></li>
-                    <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                    <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                    <li><a class="text-decoration-none" href="#">Contact</a></li>
-                </ul>
+                {% render 'footer-menu' %}
             </div>
 
         </div>
 
+        {% comment %} footer top end {% endcomment %}
+
+
+        {% comment %} footer middle {% endcomment %}
         <div class="row text-light mb-4">
             <div class="col-12 mb-3">
                 <div class="w-100 my-3 border-top border-light"></div>
@@ -76,6 +85,9 @@
         </div>
     </div>
 
+     {% comment %} footer middle end{% endcomment %}
+
+     {% comment %} footer bottom {% endcomment %}
     <div class="w-100 bg-black py-3">
         <div class="container">
             <div class="row pt-2">
@@ -88,5 +100,82 @@
             </div>
         </div>
     </div>
+    {% comment %} footer bottom end {% endcomment %}
 
 </footer>
+
+
+
+<style>
+    .bg-dark{
+        background: {{  section.settings.background }}!important;
+    }
+    .bg-dark a{
+        color: {{  section.settings.text_color }}!important;
+    }
+</style>
+
+
+
+{% schema %}
+{
+    "name": "Footer",
+    "settings": [
+        {
+            "type": "color",
+            "id": "background",
+            "label": "Background",
+            "default": "#212934"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "text",
+            "id": "header_address",
+            "label": "Header address",
+            "default": "123 Consectetur at ligula 10660"
+        },
+        {
+            "type": "text",
+            "id": "header_email",
+            "label": "Header email",
+            "default": "info@company.com"
+        },
+        {
+            "type": "text",
+            "id": "header_phone",
+            "label": "Header phone",
+            "default": "010-020-0340"
+        }
+    ],
+    "presets": [],
+
+
+    
+    "blocks": [
+    {
+      "name": "Quicklinks",
+      "type": "quicklinks",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link name",
+          "default": "Product"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ]
+
+}
+{% endschema %}
