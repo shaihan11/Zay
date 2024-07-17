@@ -4,9 +4,21 @@
       "type": "banner",
       "settings": {
       }
+    },
+    "banner-slider": {
+      "type": "banner-slider",
+      "settings": {
+      }
+    },
+    "category-months": {
+      "type": "category-months",
+      "settings": {
+      }
     }
   },
   "order": [
-    "home-banner"
+    "home-banner",
+    "banner-slider",
+    "category-months"
   ]
 }

@@ -1,0 +1,100 @@
+<!-- Start Banner Hero -->
+<section>
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Carousel Indicators (optional) -->
+        <!--
+        <ol class="carousel-indicators">
+            {% for block in section.blocks %}
+                {%- if forloop.first -%}
+                    <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="{{ forloop.index0 }}" class="active"></li>
+                {%- else -%}
+                    <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="{{ forloop.index0 }}"></li>
+                {%- endif -%}
+            {% endfor %}
+        </ol>
+        -->
+
+        <div class="carousel-innerr">
+            {% for block in section.blocks %}
+                {%- if block.type == 'homewrapper' -%}
+                    <div class="carousel-itemr">
+                        <div class="container">
+                            <div class="row p-5">
+                                <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                                    {% if section.settings.banner_image %}
+                                        <img
+                                            width="100%"
+                                            height="100%"
+                                            loading="lazy"
+                                            src="{{ section.settings.banner_image | image_url }}"
+                                            alt="logo top"/>
+                                    {% else %}
+                                        <img 
+                                            width="100%"
+                                            height="100%"
+                                            loading="lazy"
+                                            class="img-fluid"
+                                            src="{{ 'banner_img_03.jpg' | asset_url }}"
+                                            alt="nike-logo"/>
+                                    {% endif %}
+                                </div>
+
+                                <div class="col-lg-6 mb-0 d-flex align-items-center">
+                                    <h1>{{  block.settings.banner-heading}}</h1>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+{% comment %} 
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a> {% endcomment %}
+    </div>
+</section>
+<!-- End Banner Hero -->
+
+{% schema %}
+{
+    "name": "Banner Slider",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "banner_image",
+            "label": "Pick Banner image",
+            "info": "Png file"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Banner Slider",
+            "blocks": [
+                {
+                    "type": "homewrapper"
+                }
+            ]
+        }
+    ],
+    "blocks": [
+        {
+            "type": "homewrapper",
+            "name": "Heading wrapper",
+            "limit": 3,
+            "settings": [
+                {
+                    "type": "inline_richtext",
+                    "id": "banner-heading",
+                    "default": "Repr in voluptate",
+                    "label": "Here heading"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

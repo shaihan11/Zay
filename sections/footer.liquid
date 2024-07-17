@@ -24,24 +24,18 @@
 
             <div class="col-md-4 pt-5">
                 <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
-
-
-              <ul class="list-unstyled text-light footer-link-list">
+                <ul class="list-unstyled text-light footer-link-list">
                     {% for block in section.blocks %}
-                        {% case block.type %}
-                            {% when 'quicklinks' %}
+                        {%- case block.type -%}
+                            {%- when 'quicklinks' -%}
                                 <li>
-                                    <a class="text-decoration-none" href="{{ block.settings.link_url }}" target="_blank">
-                                        {{ block.settings.link_text | escape }}
+                                    <a class="text-decoration-none" href="{{ block.settings.link }}" target="_blank">
+                                        {{ block.settings.text | escape }}
                                     </a>
                                 </li>
                         {% endcase %}
                     {% endfor %}
-                </ul> 
-                
-
-
-
+                </ul>
             </div>
 
             <div class="col-md-4 pt-5">
@@ -93,8 +87,7 @@
             <div class="row pt-2">
                 <div class="col-12">
                     <p class="text-left text-light">
-                        Copyright &copy; 2021 Company Name 
-                        | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                        {{ section.settings.footer_bottom }}
                     </p>
                 </div>
             </div>
@@ -110,7 +103,8 @@
     .bg-dark{
         background: {{  section.settings.background }}!important;
     }
-    .bg-dark a{
+    .bg-dark a,
+    .bg-dark p{
         color: {{  section.settings.text_color }}!important;
     }
 </style>
@@ -136,20 +130,26 @@
         {
             "type": "text",
             "id": "header_address",
-            "label": "Header address",
+            "label": "footer address",
             "default": "123 Consectetur at ligula 10660"
         },
         {
             "type": "text",
             "id": "header_email",
-            "label": "Header email",
+            "label": "footer email",
             "default": "info@company.com"
         },
         {
             "type": "text",
             "id": "header_phone",
-            "label": "Header phone",
+            "label": "footer phone",
             "default": "010-020-0340"
+        },
+        {
+            "type": "richtext",
+            "id": "footer_bottom",
+            "label": "footer bottom text",
+            "default": "<p>Copyright Text here</p>"
         }
     ],
     "presets": [],
@@ -164,13 +164,13 @@
       "settings": [
         {
           "type": "text",
-          "id": "link_text",
-          "label": "Link name",
+          "id": "text",
+          "label": "Text",
           "default": "Product"
         },
         {
           "type": "url",
-          "id": "link_url",
+          "id": "link",
           "label": "Link URL"
         }
       ]
