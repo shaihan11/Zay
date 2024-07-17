@@ -1,14 +1,17 @@
 <section class="bg-light">
     <div class="container py-5">
-        <div class="row text-center py-3">
+        <div class="row text-center pt-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1">Featured Product</h1>
-                <p>
-                    Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident.
-                </p>
+                {% if section.settings.heading != blank %}
+                    <h1 class="h1">{{ section.settings.heading }}</h1>
+                {% endif %}
+                {% if section.settings.subheading != blank %}
+                    <p>{{ section.settings.subheading }}</p>
+                {% endif %}
             </div>
         </div>
+
+
         <div class="row">
             <div class="col-12 col-md-4 mb-4">
                 <div class="card h-100">
@@ -37,3 +40,28 @@
         </div>
     </div>
 </section>
+
+
+{% schema %}
+{
+  "name": "Feature products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured products",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

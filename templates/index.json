@@ -2,7 +2,33 @@
   "sections": {
     "home-banner": {
       "type": "banner",
+      "blocks": {
+        "heading_7jnE49": {
+          "type": "heading",
+          "settings": {
+            "banner-heading": "Repr in voluptate"
+          }
+        },
+        "subtext_xcww8L": {
+          "type": "subtext",
+          "settings": {
+            "banner-subtext": "Repr in voluptate"
+          }
+        },
+        "content_HLj7n4": {
+          "type": "content",
+          "settings": {
+            "banner-content": "We bring you 100% free CSS templates for your websites. If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you."
+          }
+        }
+      },
+      "block_order": [
+        "heading_7jnE49",
+        "subtext_xcww8L",
+        "content_HLj7n4"
+      ],
       "settings": {
+        "banner_image": "shopify:\/\/shop_images\/banner_img_01.jpg"
       }
     },
     "banner-slider": {
@@ -13,17 +39,22 @@
     "category-months": {
       "type": "category-months",
       "settings": {
+        "heading": "Categories of The Month",
+        "subheading": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       }
     },
-    "category-months": {
-      "type": "category-months",
+    "featured-product": {
+      "type": "featured-product",
       "settings": {
+        "heading": "Featured Product",
+        "subheading": "Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
       }
     }
   },
   "order": [
     "home-banner",
     "banner-slider",
-    "category-months"
+    "category-months",
+    "featured-product"
   ]
 }
