@@ -1,1 +1,66 @@
-hello
+<section class="container py-5">
+    <div class="row text-center pt-3">
+        <div class="col-lg-6 m-auto">
+            {% if section.settings.heading != blank %}
+                <h1 class="h1">{{ section.settings.heading }}</h1>
+            {% endif %}
+            {% if section.settings.subheading != blank %}
+                <p>{{ section.settings.subheading }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        {% for collection in collections %}
+            <div class="col-12 col-md-4 p-5 mt-3 single-category">
+                <a href="{{ collection.url }}">
+                    {% if collection.image %}
+                        <img
+                            width="100%"
+                            height="100%"
+                            loading="lazy"
+                            class="rounded-circle img-fluid border"
+                            src="{{ collection.image | img_url: 'large' }}"
+                            alt="{{ collection.title }} logo"/>
+                    {% else %}
+                        <img 
+                            width="100%"
+                            height="100%"
+                            loading="lazy"
+                            class="rounded-circle img-fluid border"
+                            src="{{ 'category_img_01.jpg' | asset_url }}"
+                            alt="{{ collection.title }} logo"/>
+                    {% endif %}
+                </a>
+                <h5 class="text-center mt-3 mb-3">{{ collection.title }}</h5>
+                <p class="text-center"><a class="btn btn-success" href="{{ collection.url }}">Go Shop</a></p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "Category Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category Section",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
