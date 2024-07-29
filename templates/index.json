@@ -47,14 +47,33 @@
       "type": "featured-product",
       "settings": {
         "heading": "Featured Product",
-        "subheading": "Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+        "subheading": "Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        "collection": "accessories"
       }
-    }
+    },
+    "about-banner": {
+      "type": "about-banner",
+      "settings": {
+      }
+    },
+    "our-services": {
+      "type": "our-services",
+      "settings": {
+      }
+    },
+    "our-brands": {
+      "type": "our-brands",
+      "settings": {
+      }
+    },
   },
   "order": [
     "home-banner",
     "banner-slider",
     "category-months",
-    "featured-product"
+    "featured-product",
+    "about-banner",
+    "our-services",
+    "our-brands"
   ]
 }
