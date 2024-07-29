@@ -1,15 +1,19 @@
 <!-- Start about banner -->
 <section>
-    <section class="bg-success py-5">
+    <section class="bg-success about-bg py-5">
         <div class="container">
             <div class="row align-items-center py-5">
                 <div class="col-md-8 text-white">
-                    <h1>About Us</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
+
+                    {% for block in section.blocks %}
+                        {% if block.type == 'heading' %}
+                          <h1>{{ block.settings.banner-heading }}</h1>
+                        {% endif %}
+                        {% if block.type == 'subtext' %}
+                          <p>{{ block.settings.banner-subtext }}</p>
+                        {% endif %}
+                    {% endfor %}          
+
                 </div>
                 <div class="col-md-4">
 
@@ -38,6 +42,12 @@
 <!-- End about banner -->
 
 
+<style>
+    .about-bg{
+    background: {{section.settings.banner_bg}}!important;
+}
+</style>
+
 
 
 {% schema %}
@@ -49,6 +59,12 @@
             "id": "banner_image",
             "label": "Pick Banner image",
             "info": "Png file"
+        },
+        {
+            "type": "color",
+            "id": "banner_bg",
+            "label": "Change bg color",
+            "default": "#59ab6e"
         }
     ],
     "presets": [
@@ -60,9 +76,6 @@
         },
         {
           "type": "subtext"
-        },
-        {
-          "type": "content"
         }
       ]
     }
@@ -91,25 +104,11 @@
                 {
                 "type": "inline_richtext",
                 "id": "banner-subtext",
-                "default": "Repr in voluptate",
+                "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 "label": "Here subtext"
                 }
             ]
-        },
-
-        {
-            "type": "content",
-            "name": "Content",
-            "limit": 1,
-            "settings": [
-                {
-                "type": "inline_richtext",
-                "id": "banner-content",
-                "default": "We bring you 100% free CSS templates for your websites. If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you.",
-                "label": "Here content"
-                }
-            ]
-        },
+        }
     ],
 
     

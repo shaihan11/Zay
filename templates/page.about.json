@@ -1,0 +1,100 @@
+{
+  "name": "About",
+  "sections": {
+    "about_banner_zyM3K9": {
+      "type": "about-banner",
+      "blocks": {
+        "heading_LbRjLT": {
+          "type": "heading",
+          "settings": {
+            "banner-heading": "About Us"
+          }
+        },
+        "subtext_Xh3XXF": {
+          "type": "subtext",
+          "settings": {
+            "banner-subtext": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        }
+      },
+      "block_order": [
+        "heading_LbRjLT",
+        "subtext_Xh3XXF"
+      ],
+      "settings": {
+        "banner_bg": "#59ab6e"
+      }
+    },
+    "our_services_BDJafQ": {
+      "type": "our-services",
+      "blocks": {
+        "service_block_mfjJYh": {
+          "type": "service_block",
+          "settings": {
+            "icon_class": "fa-truck",
+            "heading_text": "Delivery Services"
+          }
+        },
+        "service_block_bz3QYm": {
+          "type": "service_block",
+          "settings": {
+            "icon_class": "fas fa-exchange-alt",
+            "heading_text": "Shipping & Return"
+          }
+        },
+        "service_block_LajULT": {
+          "type": "service_block",
+          "settings": {
+            "icon_class": "fa fa-percent",
+            "heading_text": "Promotion"
+          }
+        },
+        "service_block_MMwRfm": {
+          "type": "service_block",
+          "settings": {
+            "icon_class": "fa fa-user",
+            "heading_text": "24 Hours Service"
+          }
+        }
+      },
+      "block_order": [
+        "service_block_mfjJYh",
+        "service_block_bz3QYm",
+        "service_block_LajULT",
+        "service_block_MMwRfm"
+      ],
+      "settings": {
+        "heading": "Our Services",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet."
+      }
+    },
+    "our_brands_fwGiQD": {
+      "type": "our-brands",
+      "blocks": {
+        "heading_TwPhex": {
+          "type": "heading",
+          "settings": {
+            "banner-heading": "Repr in voluptate"
+          }
+        },
+        "subtext_NKWYat": {
+          "type": "subtext",
+          "settings": {
+            "banner-subtext": "Repr in voluptate"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TwPhex",
+        "subtext_NKWYat"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "about_banner_zyM3K9",
+    "our_services_BDJafQ",
+    "our_brands_fwGiQD"
+  ]
+}

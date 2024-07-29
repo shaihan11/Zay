@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "main_page": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "our-services": {
+      "type": "our-services",
+      "blocks": {
+        "service_block_wYMjdb": {
+          "type": "service_block",
+          "settings": {
+            "icon_class": "fa-truck fa-lg",
+            "heading_text": "Delivery Services"
+          }
+        }
+      },
+      "block_order": [
+        "service_block_wYMjdb"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": ""
+      }
+    }
+  },
+  "order": [
+    "main_page",
+    "our-services"
+  ]
+}
