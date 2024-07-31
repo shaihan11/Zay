@@ -1,32 +1,24 @@
 {
   "sections": {
-    "main_page": {
-      "type": "main-page",
+    "contact_map_LQGpXp": {
+      "type": "contact-map",
       "settings": {
+        "banner_bg": "#d3e9d9",
+        "contact_text": "Contact Us",
+        "contact_content": "Proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet."
       }
     },
-    "our-services": {
-      "type": "our-services",
-      "blocks": {
-        "service_block_wYMjdb": {
-          "type": "service_block",
-          "settings": {
-            "icon_class": "fa-truck fa-lg",
-            "heading_text": "Delivery Services"
-          }
-        }
-      },
-      "block_order": [
-        "service_block_wYMjdb"
-      ],
+    "contact_form_PkDGEi": {
+      "type": "contact-form",
       "settings": {
-        "heading": "",
-        "subheading": ""
+        "banner_bg": "#ffffff",
+        "contact_text": "Contact Us",
+        "contact_content": "Proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet."
       }
     }
   },
   "order": [
-    "main_page",
-    "our-services"
+    "contact_map_LQGpXp",
+    "contact_form_PkDGEi"
   ]
 }

@@ -1,0 +1,52 @@
+ <div class="container-fluid bg-light py-5 contact-banner">
+  <div class="col-md-6 m-auto text-center">
+      <h1 class="h1">{{ section.settings.contact_text}}</h1>
+      <p>
+        {{  section.settings.contact_content}}
+      </p>
+  </div>
+</div>
+
+
+<style>
+    .contact-banner{
+    background: {{section.settings.banner_bg}}!important;
+}
+</style>
+
+
+
+{% schema %}
+{
+    "name": "Contact map",
+    "settings": [
+        {
+            "type": "color",
+            "id": "banner_bg",
+            "label": "Change bg color",
+            "default": "#59ab6e"
+        },
+        {
+            "type": "text",
+            "id": "contact_text",
+            "label": "Change title",
+            "default": "Contact Us"
+        },
+        {
+            "type": "textarea",
+            "id": "contact_content",
+            "label": "Change Content",
+            "default": "Proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet."
+        }
+
+    ],
+    "presets": [
+    {
+      "name": "Contact map",
+      "blocks": [
+      ]
+    }
+  ],
+    
+}
+{% endschema %}
